@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D26215CD-81A8-4383-849E-C1D0A5250F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5CD7FB6-BCB6-4932-9D15-6A122618B31B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Snapmd", "src\Snapmd\Snapmd.xproj", "{9D29DEB1-AF83-4C5E-A590-CF35383A0C21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D29DEB1-AF83-4C5E-A590-CF35383A0C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D29DEB1-AF83-4C5E-A590-CF35383A0C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D29DEB1-AF83-4C5E-A590-CF35383A0C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D29DEB1-AF83-4C5E-A590-CF35383A0C21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D29DEB1-AF83-4C5E-A590-CF35383A0C21} = {D26215CD-81A8-4383-849E-C1D0A5250F33}
+	EndGlobalSection
+EndGlobal
