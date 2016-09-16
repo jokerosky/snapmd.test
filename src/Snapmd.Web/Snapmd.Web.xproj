@@ -7,6 +7,8 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+
     <ProjectGuid>9d29deb1-af83-4c5e-a590-cf35383a0c21</ProjectGuid>
     <RootNamespace>Snapmd</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>

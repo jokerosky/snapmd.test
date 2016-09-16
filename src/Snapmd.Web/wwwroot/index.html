@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <title>LMS - Angular 2 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="lib/tether/dist/css/tether.css" rel="stylesheet"/>
+
+    <link href="css/site.css" rel="stylesheet" />
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/tether/dist/js/tether.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+
+    <!-- 2. Configure SystemJS -->
+    <script src="/js/systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err) { console.error(err); });
+    </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+    <snapmd-app>Loading...</snapmd-app>
+
+    <!-- bower:js -->
+    <!-- endbower  -->
+    <!-- inject:js -->
+    <!-- endinject  -->
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿<nav class="navbar navbar-light bg-faded snp-content-padding">
+    <div class="container text-xs-center">
+
+        <a class="navbar-brand pull-xs-none" href="#">Snapmd test task about 2 cups measurements. Implemented with asp.net core and angular2.</a>
+
+        <!--<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+            <div class="clearfix hidden-sm-up"></div>
+        </div>-->
+    </div>
+</nav>
+
+<article class="container snp-content-top-padding">
+    <form class="row">
+        <div class="col-sm-3 snp-right-shadow">
+            <div class="form-group">
+                <label for="jar-1-capacity" class="col-form-label hidden-sm-up">First jar capacity</label>
+                <input class="form-control" type="number" value="3" id="jar-1-capacity">
+            </div>
+            <div class="form-group">
+                <label for="jar-2-capacity" class="col-form-label hidden-sm-up">Second jar capacity</label>
+                <input class="form-control" type="number" value="5" id="jar-2-capacity">
+            </div>
+            <div class="form-group">
+                <label for="target-amount" class="col-form-label hidden-sm-up">Target amount</label>
+                <input class="form-control" type="number" value="4" id="target-amount">
+            </div>
+            <div class="form-group ">
+                <input type="submit" class="hidden-sm-up btn btn-primary  pull-xs-right" value="Calculate" />
+            </div>
+            <div class="clearfix snp-content-padding"></div>
+        </div>
+        <div class="col-sm-4 col-lg-3 hidden-xs-down">
+            <div class="form-group">
+                <label for="jar-1-capacity" class="col-form-label">First jar capacity</label>
+            </div>
+            <div class="form-group">
+                <label for="jar-2-capacity" class="col-form-label">Second jar capacity</label>
+            </div>
+            <div class="form-group">
+                <label for="target-amount" class="col-form-label">Target amount</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="hidden-xs-down btn btn-primary " value="Calculate" />
+            </div>
+        </div>
+        <div class="col-sm-5 col-lg-6">
+            <p class="text-justify">
+                Given you had an infinite supply of water…
+                You are give 2 cups, a 5 liter cup and a 3 liter cup.
+                How would you measure exactly 4 liters?
+                Assignment:
+                The above is an old riddle, which the following assignment would help solve.
+                Create a program in any language that will calculate 2 different options of calculating the
+                answer. Also make the inputs out of the cup sizes and amount wanted so the user can input
+                any value for the cup sizes or amount wanted.
+            </p>
+        </div>
+    </form>
+    
+    <section>
+        <h4>First decision - {{'N'}} steps</h4>
+        <div class="snp-flex">
+            <div class="snp-jars">
+                <div class="snp-jar" style="background: lightblue;">A</div>
+                <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
+            </div>
+            <div class="snp-jars">
+                <div class="snp-jar" ></div>
+                <div class="snp-jar" ></div>
+            </div>
+
+            
+
+        </div>
+
+        <hr />
+
+        <h4>Second decision - {{'M'}} steps</h4>
+        <div class="snp-flex">
+            <div class="snp-jars">
+                <div class="snp-jar" style="background: lightblue;">A</div>
+                <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
+            </div>
+            <div class="snp-jars">
+                <div class="snp-jar"></div>
+                <div class="snp-jar"></div>
+            </div>
+
+        </div>
+    </section>
+</article>
+        
+
