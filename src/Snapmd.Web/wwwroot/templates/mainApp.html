@@ -9,15 +9,15 @@
         <div class="col-sm-3 snp-right-shadow">
             <div class="form-group">
                 <label for="jar-1-capacity" class="col-form-label hidden-sm-up">First jar capacity</label>
-                <input class="form-control" type="number" [(ngModel)]="jar1Capacity" name="jar1Capacity" id="jar-1-capacity" min="1" max="100" required>
+                <input class="form-control" type="number" [(ngModel)]="input.jar1Capacity" name="jar1Capacity" id="jar-1-capacity" min="1" max="100" step="1" required>
             </div>
             <div class="form-group">
                 <label for="jar-2-capacity" class="col-form-label hidden-sm-up">Second jar capacity</label>
-                <input class="form-control" type="number" value="5" name="jar2Capacity" id="jar-2-capacity" min="1" max="100" required>
+                <input class="form-control" type="number" [(ngModel)]="input.jar2Capacity" name="jar2Capacity" id="jar-2-capacity" min="1" max="100" step="1"  required>
             </div>
             <div class="form-group">
                 <label for="target-amount" class="col-form-label hidden-sm-up">Target amount</label>
-                <input class="form-control" type="number" value="4" name="targetAmount" id="target-amount" min="1" max="100" required>
+                <input class="form-control" type="number" [(ngModel)]="input.targetAmount" name="targetAmount" id="target-amount" min="1" max="100" step="1" required>
             </div>
             <div class="form-group ">
                 <input type="submit" class="hidden-sm-up btn btn-primary  pull-xs-right" value="Calculate" [disabled]="!taskForm.form.valid" />
@@ -64,8 +64,8 @@
             <h4>First decision - {{'N'}} steps</h4>
             <div class="snp-flex">
                 <div class="snp-jars">
-                    <div class="snp-jar" style="background: lightblue;">{{jar1Capacity}}</div>
-                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{jar2Capacity}}</div>
+                    <div class="snp-jar" style="background: lightblue;">{{input.jar1Capacity}}</div>
+                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{input.jar2Capacity}}</div>
                 </div>
                 <div class="snp-jars">
                     <div class="snp-jar"></div>
@@ -81,8 +81,8 @@
             <h4>Second decision - {{'M'}} steps</h4>
             <div class="snp-flex">
                 <div class="snp-jars">
-                    <div class="snp-jar" style="background: lightblue;">A</div>
-                    <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
+                    <div class="snp-jar" style="background: lightblue;">{{input.jar1Capacity}}</div>
+                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{input.jar2Capacity}}</div>
                 </div>
                 <div class="snp-jars">
                     <div class="snp-jar"></div>

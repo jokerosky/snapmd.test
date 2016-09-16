@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Snapmd.Infrastructure;
+using Snapmd.Core.Solvers;
 
 namespace Snapmd
 {
@@ -38,6 +39,8 @@ namespace Snapmd
         {
             services.AddMvc();
             services.AddOptions();
+
+            services.AddTransient<ITaskSolver, BilliardsTaskSolver>();
 
             services.Configure<Settings>(Configuration);
             services.Configure<Settings>(x => {
