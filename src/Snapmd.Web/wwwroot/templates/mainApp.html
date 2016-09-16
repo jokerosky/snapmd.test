@@ -1,34 +1,26 @@
 ﻿<nav class="navbar navbar-light bg-faded snp-content-padding">
     <div class="container text-xs-center">
-
         <a class="navbar-brand pull-xs-none" href="#">Snapmd test task about 2 cups measurements. Implemented with asp.net core and angular2.</a>
-
-        <!--<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-            &#9776;
-        </button>
-        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-            <div class="clearfix hidden-sm-up"></div>
-        </div>-->
     </div>
 </nav>
 
 <article class="container snp-content-top-padding">
-    <form class="row">
+    <form class="row" (ngSubmit)="getDecision()" #taskForm="ngForm">
         <div class="col-sm-3 snp-right-shadow">
             <div class="form-group">
                 <label for="jar-1-capacity" class="col-form-label hidden-sm-up">First jar capacity</label>
-                <input class="form-control" type="number" value="3" id="jar-1-capacity">
+                <input class="form-control" type="number" [(ngModel)]="jar1Capacity" name="jar1Capacity" id="jar-1-capacity" min="1" max="100" required>
             </div>
             <div class="form-group">
                 <label for="jar-2-capacity" class="col-form-label hidden-sm-up">Second jar capacity</label>
-                <input class="form-control" type="number" value="5" id="jar-2-capacity">
+                <input class="form-control" type="number" value="5" name="jar2Capacity" id="jar-2-capacity" min="1" max="100" required>
             </div>
             <div class="form-group">
                 <label for="target-amount" class="col-form-label hidden-sm-up">Target amount</label>
-                <input class="form-control" type="number" value="4" id="target-amount">
+                <input class="form-control" type="number" value="4" name="targetAmount" id="target-amount" min="1" max="100" required>
             </div>
             <div class="form-group ">
-                <input type="submit" class="hidden-sm-up btn btn-primary  pull-xs-right" value="Calculate" />
+                <input type="submit" class="hidden-sm-up btn btn-primary  pull-xs-right" value="Calculate" [disabled]="!taskForm.form.valid" />
             </div>
             <div class="clearfix snp-content-padding"></div>
         </div>
@@ -60,36 +52,45 @@
         </div>
     </form>
     
-    <section>
-        <h4>First decision - {{'N'}} steps</h4>
-        <div class="snp-flex">
-            <div class="snp-jars">
-                <div class="snp-jar" style="background: lightblue;">A</div>
-                <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
-            </div>
-            <div class="snp-jars">
-                <div class="snp-jar" ></div>
-                <div class="snp-jar" ></div>
-            </div>
+    <section *ngIf="!decision">
 
-            
+        <button class="hidden-sm-up pull-xs-left btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#decisions" aria-controls="decisions" aria-expanded="false" aria-label="Toggle navigation">
+            Collapse decisions &#9776;
+        </button>
 
-        </div>
+        <div class="clearfix hidden-sm-up snp-content-padding"></div>
+        <section class="navbar-toggleable-xs" id="decisions">
 
-        <hr />
+            <h4>First decision - {{'N'}} steps</h4>
+            <div class="snp-flex">
+                <div class="snp-jars">
+                    <div class="snp-jar" style="background: lightblue;">{{jar1Capacity}}</div>
+                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{jar2Capacity}}</div>
+                </div>
+                <div class="snp-jars">
+                    <div class="snp-jar"></div>
+                    <div class="snp-jar"></div>
+                </div>
 
-        <h4>Second decision - {{'M'}} steps</h4>
-        <div class="snp-flex">
-            <div class="snp-jars">
-                <div class="snp-jar" style="background: lightblue;">A</div>
-                <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
-            </div>
-            <div class="snp-jars">
-                <div class="snp-jar"></div>
-                <div class="snp-jar"></div>
+
+
             </div>
 
-        </div>
+            <hr />
+
+            <h4>Second decision - {{'M'}} steps</h4>
+            <div class="snp-flex">
+                <div class="snp-jars">
+                    <div class="snp-jar" style="background: lightblue;">A</div>
+                    <div class="snp-jar" style="background: lightgoldenrodyellow">B</div>
+                </div>
+                <div class="snp-jars">
+                    <div class="snp-jar"></div>
+                    <div class="snp-jar"></div>
+                </div>
+
+            </div>
+        </section>
     </section>
 </article>
         
