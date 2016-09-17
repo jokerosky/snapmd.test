@@ -7,7 +7,7 @@ import './rxjs-operators';
 
 @Component({
   selector: 'snapmd-app',
-  templateUrl: '\\templates\\mainApp.html'
+  templateUrl: '/templates/mainApp.html'
 })
 
 
