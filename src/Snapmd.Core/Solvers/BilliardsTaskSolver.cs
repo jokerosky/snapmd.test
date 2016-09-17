@@ -55,24 +55,26 @@ namespace Snapmd.Core.Solvers
                         if (IsFinished()) break;
                     }
 
-                    if (_jar1level == 0)
-                    {
-                        _jar1level = max;
-                        // _jar2level stays the same
-                        result.TransfusionsFirstWay.Add(new Transfusion(_jar1level, _jar2level));
-                    }
-
                     if (_jar2level == min)
                     {
                         // _jar1level  stays the same
                         _jar2level = 0;
                         result.TransfusionsFirstWay.Add(new Transfusion(_jar1level, _jar2level));
+                        if (IsFinished()) break;
+                    }
+
+                    if (_jar1level == 0)
+                    {
+                        _jar1level = max;
+                        // _jar2level stays the same
+                        result.TransfusionsFirstWay.Add(new Transfusion(_jar1level, _jar2level));
+                        if (IsFinished()) break;
                     }
 
                     if (_jar2level == 0)
                     {
-                        _jar2level = min > _jar1level ? _jar1level : _jar1level - min;
-                        _jar1level = 0;
+                        _jar2level = _jar1level > min ? min : _jar1level ;
+                        _jar1level = _jar1level > min ? _jar1level - min : 0;
                         result.TransfusionsFirstWay.Add(new Transfusion(_jar1level, _jar2level));
 
                         if (IsFinished()) break;
@@ -102,6 +104,7 @@ namespace Snapmd.Core.Solvers
                         _jar2level = 0;
                         // _jar1level stays the same
                         result.TransfusionsSecondWay.Add(new Transfusion(_jar1level, _jar2level));
+                        if (IsFinished()) break;
                     }
 
                     if (_jar1level == 0)
@@ -109,6 +112,7 @@ namespace Snapmd.Core.Solvers
                         // _jar1level  stays the same
                         _jar1level = min;
                         result.TransfusionsSecondWay.Add(new Transfusion(_jar1level, _jar2level));
+                        if (IsFinished()) break;
                     }
 
                     if (_jar2level == 0)

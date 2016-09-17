@@ -5,7 +5,7 @@
 </nav>
 
 <article class="container snp-content-top-padding">
-    <form class="row" (ngSubmit)="getDecision()" #taskForm="ngForm">
+    <form class="row" (ngSubmit)="getDecision()" (change)="onChange()" #taskForm="ngForm">
         <div class="col-sm-3 snp-right-shadow">
             <div class="form-group">
                 <label for="jar-1-capacity" class="col-form-label hidden-sm-up">First jar capacity</label>
@@ -52,7 +52,11 @@
         </div>
     </form>
     
-    <section *ngIf="!decision">
+    <div class="alert alert-danger " *ngIf="noDecision">
+        The task has no decision for given values!
+    </div>
+
+    <section *ngIf="decision">
 
         <button class="hidden-sm-up pull-xs-left btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#decisions" aria-controls="decisions" aria-expanded="false" aria-label="Toggle navigation">
             Collapse decisions &#9776;
@@ -61,34 +65,47 @@
         <div class="clearfix hidden-sm-up snp-content-padding"></div>
         <section class="navbar-toggleable-xs" id="decisions">
 
-            <h4>First decision - {{'N'}} steps</h4>
+            <div class="alert alert-warning " *ngIf="changed">
+                This decision is not valid anymore!
+            </div>
+
+            <h4>First decision - {{decision.transfusionsFirstWay.length}} steps</h4>
             <div class="snp-flex">
-                <div class="snp-jars">
-                    <div class="snp-jar" style="background: lightblue;">{{input.jar1Capacity}}</div>
-                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{input.jar2Capacity}}</div>
+                <div class="snp-jars snp-thick-borders">
+                    <div class="snp-jar"></div>
+                    <div class="snp-jar snp-jar-1">{{input.jar1Capacity}}</div>
+                    <div class="snp-jar snp-jar-2">{{input.jar2Capacity}}</div>
                 </div>
                 <div class="snp-jars">
-                    <div class="snp-jar"></div>
+                    
                     <div class="snp-jar"></div>
                 </div>
-
-
-
+                <div class="snp-jars snp-border-right" *ngFor="let item of decision.transfusionsFirstWay; let i = index;">
+                    <div class="snp-jar snp-bottom-border">{{i+1}}</div>
+                    <div class="snp-jar snp-jar-1">{{item.firstJar}}</div>
+                    <div class="snp-jar snp-jar-2">{{item.secondJar}}</div>
+                </div>
             </div>
 
             <hr />
 
-            <h4>Second decision - {{'M'}} steps</h4>
+            <h4>Second decision - {{decision.transfusionsSecondWay.length}} steps</h4>
             <div class="snp-flex">
-                <div class="snp-jars">
-                    <div class="snp-jar" style="background: lightblue;">{{input.jar1Capacity}}</div>
-                    <div class="snp-jar" style="background: lightgoldenrodyellow">{{input.jar2Capacity}}</div>
+                <div class="snp-jars snp-thick-borders">
+                    <div class="snp-jar"></div>
+                    <div class="snp-jar  snp-jar-1">{{input.jar1Capacity}}</div>
+                    <div class="snp-jar  snp-jar-2">{{input.jar2Capacity}}</div>
                 </div>
-                <div class="snp-jars">
+                <div class="snp-jars ">
                     <div class="snp-jar"></div>
                     <div class="snp-jar"></div>
+                    <div class="snp-jar"></div>
                 </div>
-
+                <div class="snp-jars snp-border-right" *ngFor="let item of decision.transfusionsSecondWay; let i = index;">
+                    <div class="snp-jar snp-bottom-border">{{i+1}}</div>
+                    <div class="snp-jar snp-jar-1">{{item.firstJar}}</div>
+                    <div class="snp-jar snp-jar-2">{{item.secondJar}}</div>
+                </div>
             </div>
         </section>
     </section>

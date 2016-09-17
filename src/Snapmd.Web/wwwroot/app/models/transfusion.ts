@@ -1,4 +1,4 @@
 ﻿export class Transfusion {
-    FirstJar: number;
-    SecondJar: number;
+    firstJar: number;
+    secondJar: number;
 }

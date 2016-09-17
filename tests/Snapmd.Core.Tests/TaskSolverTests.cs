@@ -22,6 +22,7 @@ namespace Snapmd.Core.Tests
             var jar1 = new Jar(5);
             var jar2 = new Jar(3);
             var jar3 = new Jar(10);
+            var jar4 = new Jar(20);
 
             //bad way
             var result = solver.TryToSolve(jar1, jar2, 8);
@@ -38,6 +39,12 @@ namespace Snapmd.Core.Tests
             Assert.IsTrue(result.TransfusionsSecondWay.Count > 0);
 
             result = solver.TryToSolve(jar2, jar3, 4);
+            Assert.IsTrue(result.IsPossible);
+
+            Assert.IsTrue(result.TransfusionsFirstWay.Count > 0);
+            Assert.IsTrue(result.TransfusionsSecondWay.Count > 0);
+
+            result = solver.TryToSolve(jar2, jar4, 16);
             Assert.IsTrue(result.IsPossible);
 
             Assert.IsTrue(result.TransfusionsFirstWay.Count > 0);

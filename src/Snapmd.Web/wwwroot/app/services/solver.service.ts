@@ -16,7 +16,6 @@ export class SolverService {
 
     getDecision(params: TaskInput): Promise<TransfusionsResult> {
         console.log('solving');
-        debugger;  
         return this.http
             .post(this.Url, params, { headers: this.headers })
             .toPromise()
@@ -24,8 +23,9 @@ export class SolverService {
             .catch(this.handleError);
     }
 
-    handleError(data: any): any {
-        console.log(`error '${data}'`);
+    handleError(error: any): any {
+        console.log(`error '${error}'`);
+        return Promise.reject(error.message || error);
     }
 
 }

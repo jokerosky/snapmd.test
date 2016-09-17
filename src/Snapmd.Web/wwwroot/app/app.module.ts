@@ -1,5 +1,5 @@
 import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
@@ -14,7 +14,7 @@ import { SolverService }  from './services/solver.service';
 
     declarations: [AppComponent],
     providers: [
-                SolverService
+        SolverService
     ],
     bootstrap: [AppComponent]
 })

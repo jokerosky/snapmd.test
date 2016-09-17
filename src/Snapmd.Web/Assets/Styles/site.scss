@@ -1,6 +1,10 @@
 ﻿$tile-height: 50px;
 $top-content-padding: 1rem;
 $content-padding: 1vmax;
+$jar1-color:lightblue;
+$jar2-color:lightgoldenrodyellow;
+$borderSize: 1px;
+
 
 body {
     min-height:100%;
@@ -31,6 +35,8 @@ body {
 .snp-flex{
     flex-wrap:wrap;
     min-height:2*$tile-height;
+    align-items:center;
+    display:flex;
 }
 
 
@@ -41,6 +47,7 @@ body {
 }
 
 .snp-jar{
+    box-sizing:border-box;
     display:flex;
     height:$tile-height;
     width:$tile-height;
@@ -48,11 +55,25 @@ body {
     justify-content:center;
 }
 
-
-.lms-flex-container{
-    display:flex;
-    flex-wrap:wrap;
-    min-height:$tile-height;
-    // align-items:left;
+.snp-jar-1{
+    background:$jar1-color;
 }
 
+.snp-jar-2{
+    background:$jar2-color;
+}
+
+.snp-bottom-border{
+    border-bottom:$borderSize solid #808080;
+}
+
+.snp-thick-borders{
+     border:2*$borderSize solid #808080;
+}
+
+.snp-border-right{
+    border-right:$borderSize solid #808080;
+    &:last-child{
+        border-right:none;
+    }
+}

@@ -14,6 +14,9 @@ import './rxjs-operators';
 export class AppComponent {
     constructor(private solverService: SolverService) { }
 
+    changed: boolean = false;
+    noDecision: boolean;
+
     input: TaskInput = {
         jar1Capacity: 3,
         jar2Capacity: 5,
@@ -24,14 +27,22 @@ export class AppComponent {
 
     getDecision() {
         console.log('form submitted');
-        
+        this.noDecision = false;
 
         this.solverService.getDecision(this.input)
             .then(decision => {
-                if (!decision.IsPossible) {
-                    //showAlert();
+                if (!decision.isPossible) {
+                    this.noDecision = true;
+                    this.decision = null;
+                    return;
                 }
+
+                this.changed = false;
                 this.decision = decision;
             });
-    } 
+    }
+
+    onChange() {
+        this.changed = true;
+    }
 }
